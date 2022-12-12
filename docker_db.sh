@@ -1,0 +1,1 @@
+docker run -d --name postgres_spring_security  -e POSTGRES_USERNAME=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=spring_security_api -p 5432:5432 postgres
