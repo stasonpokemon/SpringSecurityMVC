@@ -26,7 +26,7 @@ public class PersonDetailsServiceImpl implements UserDetailsService {
                     .append(username)
                     .append(" not found").toString());
         }
-        return new PersonDetails(person.get()); 
+        return new PersonDetails(person.get());
 
     }
 }
