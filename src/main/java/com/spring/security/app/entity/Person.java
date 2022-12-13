@@ -4,9 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Date;
 
 @Entity
 @Table(name = "people")
@@ -15,7 +13,7 @@ public class Person {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank(message = "Username must be filled")
@@ -28,7 +26,7 @@ public class Person {
     @Column(name = "password")
     private String password;
 
-    @NotNull(message = "Date of birthday must be filled")
+    @NotBlank(message = "Date of birthday must be filled")
     @Column(name = "date_of_birthday")
-    private Date dateOfBirthday;
+    private String dateOfBirthday;
 }

@@ -1,6 +1,6 @@
 package com.spring.security.app.configuration;
 
-import com.spring.security.app.service.PersonDetailsServiceImpl;
+import com.spring.security.app.service.impl.PersonDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,7 +31,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                    .antMatchers("/auth/login", "/error").permitAll()
+                    .antMatchers("/auth/login", "/error","/auth/registration").permitAll()
                     .anyRequest().authenticated()
                 .and()
                     .formLogin().loginPage("/auth/login")

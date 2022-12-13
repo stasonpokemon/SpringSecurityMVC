@@ -5,19 +5,21 @@
     <title>Login</title>
 </head>
 <body>
-  <form method="post" action="/process_login">
-      <label for="username">Enter username:</label>
-      <input type="text" id="username" name="username">
-      <br>
-      <label for="password">Enter password:</label>
-      <input type="password" id="password" name="password">
-      <br>
-      <input type="submit" value="Login"/>
+<form method="post" action="/process_login">
+    <label for="username">Enter username:</label>
+    <input type="text" id="username" name="username">
+    <br>
+    <label for="password">Enter password:</label>
+    <input type="password" id="password" name="password">
+    <br>
+    <input type="submit" value="Login"/>
+    <br>
+    <a th:href="@{/auth/registration}">Registration</a>
 
-      <div th:if="${param.error}" style="color: red">
-          Wrong username or password...
-      </div>
+    <div th:if="${param.error}" style="color: red">
+        Wrong username or password...
+    </div>
 
-  </form>
+</form>
 </body>
 </html>
