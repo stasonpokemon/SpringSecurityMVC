@@ -22,7 +22,7 @@ public class PersonValidator implements Validator {
     public void validate(Object target, Errors errors) {
         Person person = (Person) target;
         if (personService.findPersonByUsername(person.getUsername()).isPresent()){
-            errors.rejectValue("username", "User with entered username exist");
+            errors.rejectValue("username","", "User with entered username exist");
         }
 
 
