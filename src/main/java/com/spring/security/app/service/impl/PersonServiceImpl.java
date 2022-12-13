@@ -29,6 +29,7 @@ public class PersonServiceImpl implements PersonService {
     public void register(Person person) {
         String encodedPassword = passwordEncoder.encode(person.getPassword());
         person.setPassword(encodedPassword);
+        person.setRole("ROLE_USER ");
         personRepository.save(person);
     }
 }

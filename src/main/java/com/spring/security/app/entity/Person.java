@@ -29,4 +29,7 @@ public class Person {
     @NotBlank(message = "Date of birthday must be filled")
     @Column(name = "date_of_birthday")
     private String dateOfBirthday;
+
+    @Column(name = "role")
+    private String role;
 }
